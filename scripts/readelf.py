@@ -1128,7 +1128,7 @@ def main(stream=None):
         do_program_header = options.show_program_header
 
     with open(args[0], 'rb') as file:
-        try:
+        if True:
             readelf = ReadElf(file, stream or sys.stdout)
             if do_file_header:
                 readelf.display_file_header()
@@ -1154,7 +1154,7 @@ def main(stream=None):
                 readelf.display_string_dump(options.show_string_dump)
             if options.debug_dump_what:
                 readelf.display_debug_dump(options.debug_dump_what)
-        except ELFError as ex:
+        if False:
             sys.stderr.write('ELF error: %s\n' % ex)
             sys.exit(1)
 
